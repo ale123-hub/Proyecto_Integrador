@@ -1,0 +1,30 @@
+{{#if user}}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+<nav class="navbar navbar-expand-lg navbar-light bg-info">
+  <div class="container">
+    <a class="navbar-brand "href="#">
+      <img src="/img/icon_6704.png" alt="20" width="20">
+    </a>
+    <a class="navbar-brand" href="#">Seguimiento - Clientes</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <a class="nav-link active" aria-current="page" id="nav"
+          href="/Seguimiento/listar/{{user.id_usuario}}">Seguimiento</a>
+        <a class="nav-link active" aria-current="page" id="nav"
+          href="/Etapa_persona/listar/{{user.id_usuario}}">Asignar Etapas</a>
+        <a class="nav-link active" aria-current="page" id="nav"
+          href="/Planificacion_actividades/listar/{{user.id_usuario}}">Planificar Actividades</a>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <a class="btn btn-primary" id="nav" href="/CerrarSesion" role="button">Cierre la Sesión</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+{{/if}}

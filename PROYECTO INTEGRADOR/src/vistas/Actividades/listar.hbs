@@ -1,0 +1,45 @@
+<div class="global-container">
+    <div class="card w-75">
+        <div class="card-body">
+
+            <form method="GET" action="/Actividades/listar/{{user.id_usuario}}"></form>
+            <div id="contenedor">
+                <div class="row">
+                    {{#each listaActividades}}
+                    <div class="mb-3">
+                        <label class="form-label" id="">Nombre Etapa</label>
+                        <input type="text" class="form-control" name="nombre_actividades" id="nombre"
+                            value="{{nombre_actividades}}" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" id="">Descripcion</label>
+                        <textarea type="text" class="form-control" name="descripcion_actividad"
+                            id="descripcion_actividad" maxlength="700" readonly>{{descripcion_actividad}}</textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" id="">Estado</label>
+                        <input type="text" class="form-control" name="estado" id="estado" value="{{estado}}" readonly>
+                    </div>
+                    <div class="btn-group mb-3" role="toolbar">
+                        <div>
+                            <a class="btn btn-warning" href="/Actividades/editar/{{id_actividades}}">Editar</a>
+                            <a class="btn btn-danger" href="/Actividades/eliminar/{{id_actividades}}">Eliminar</a>
+                            <a class="btn btn-secondary" id="boton"
+                                href="/Planificacion_actividades/agregar/{{id_actividades}}">Detalle</a>
+                        </div>
+                    </div>
+                    <hr>
+                    {{/each}}
+                </div>
+            </div>
+            <div id="contenedor">
+                <div class="row">
+                    <div class="mb-3">
+                        <a class="btn btn-primary" href="/Actividades/agregar/{{user.id_usuario}}">Añadir</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

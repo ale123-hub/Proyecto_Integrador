@@ -1,0 +1,23 @@
+<div class="global-container">
+    <div class="card w-75">
+        <div class="card-body">
+
+            <form method="POST" action="/Actividades/agregar/{{user.id_usuario}}">
+                <div class="mb-3">
+                    <label class="form-label" id="">Nombre Actividad</label>
+                    <input type="text" class="form-control" name="nombre_actividades" id="nombre" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" id="">Descripción</label>
+                    <textarea type="text" class="form-control" name="descripcion_actividad" id="descripcion"
+                        maxlength="700" required></textarea>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" id="">Estado</label>
+                    <input type="text" class="form-control" name="estado" id="estado" required>
+                </div>
+                <button type="submit" class="btn btn-success" id="boton">Guardar</button>
+            </form>
+        </div>
+    </div>
+</div>

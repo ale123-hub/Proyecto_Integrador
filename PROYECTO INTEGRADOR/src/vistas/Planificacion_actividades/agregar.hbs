@@ -1,0 +1,51 @@
+<script src="/js/fecha.js"></script>
+
+<div class="global-container">
+    <div class="card w-75">
+        <div class="card-body">
+
+            <form method="POST" action="/Planificacion_actividades/agregar/{{user.id_usuario}}">
+                <div class="mb-3">
+                    <label class="form-label" id="">Etapa</label>                    
+                    <select class="form-control" name="etapaPersona" id="nombre">
+                     {{#each etapaPersona}}   
+                        <option value="{{id_etapa_persona}}">{{nombre_etapa}}</option>
+                     {{/each}}   
+                    </select> 
+                </div>
+                <div class="mb-3">
+                    <div id="persona">
+                        <label class="form-label" >Responsable</label>
+                        <select class="form-control" name="nombreResponsable" id="NombreResponsable">
+                            {{#each responsable}}
+                            <option value="{{this.id_responsable }}">{{this.nombre_responsable}}</option>
+                            {{/each}}
+                        </select>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div id="etapa">
+                        <label class="form-label">Actividades</label>
+                        <select class="form-control" name="actividadeIdActividades" id="actividades">
+                            {{#each listaActividades}}
+                            <option value="{{this.id_actividades}}">{{this.nombre_actividades}}</option>
+                            {{/each}}
+                        </select>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div id="fecha">
+                        <label class="form-label">Fecha Evento</label>
+                        <input class="form-control" type="text" name="fecha_evento" id="fecha_creacion" required>
+                    </div>
+                    <div>
+                        <label class="form-label" id="">Resultado Actividad</label>
+                        <textarea class="form-control" type="text" name="resultado_actividad" id="observaciones" maxlength="700"></textarea>
+                    </div><br>
+                    <button type="submit" class="btn btn-success" id="boton">Guardar</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

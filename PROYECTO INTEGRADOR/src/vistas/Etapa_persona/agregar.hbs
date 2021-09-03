@@ -1,0 +1,60 @@
+<script src="/js/fecha.js"></script>
+<div class="global-container">
+    <div class="card w-75">
+        <div class="card-body">
+
+            <form method="POST" action="/Etapa_persona/agregar/{{user.id_usuario}}">
+                <div class="mb-3">
+                    <label class="form-label" id="">Seguimiento</label>
+                    <select class="form-control" name="seguimiento" id="nombre">
+                        {{#each seguimiento}}
+                        <option value="{{this.id_seguimiento}}">{{this.nombre_seguimiento}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+                <div>
+                    <div id="persona">
+                        <label class="form-label">Persona</label>
+                        <select class="form-control" name="nombrePersona" id="NombrePersona">
+                            {{#each listaPersonas}}
+                            <option value="{{this.id_persona }}">{{this.nombre_persona}}</option>
+                            {{/each}}
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <div id="etapa">
+                        <label class="form-label">Etapa</label>
+                        <select class="form-control" name="etapa" id="etapa">
+                            {{#each listaEtapa}}
+                            <option value="{{this.id_etapas }}">{{this.nombre_etapa}}</option>
+                            {{/each}}
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <div id="responsable">
+                        <label class="form-label">Responsable</label>
+                        <select class="form-control" name="responsable" id="responsable">
+                            {{#each listaResponsable}}
+                            <option value="{{this.id_responsable }}">{{this.nombre_responsable}}</option>
+                            {{/each}}
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <div class="mb-3">
+                        <label class="form-label" id="">Observaciones</label>
+                        <textarea type="text" class="form-control" name="observaciones" id="observaciones"
+                            maxlength="700" required></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" id="">Estado</label>
+                        <input type="text" class="form-control" name="estado" id="estado" required>
+                    </div>
+                    <button type="submit" class="btn btn-success" id="boton">Guardar</button>
+            </form>
+
+        </div>
+    </div>
+</div>

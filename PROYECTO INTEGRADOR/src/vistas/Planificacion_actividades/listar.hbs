@@ -1,0 +1,49 @@
+<div class="global-container">
+    <div class="card w-75">
+        <div class="card-body">
+
+            <form method="GET" action="/Planificacion_actividades/listar/{{user.id_usuario}}">
+                <div id="contenedor">
+                    <div class="row">
+                        {{#each listaplanificaion_actividad}}
+                        <div class="mb-3">
+                            <div id="persona">
+                                <label class="form-label">Persona</label>
+                                <input type="text" class="form-control" name="persona" id="persona"
+                                    value="{{nombre_persona}}" readonly>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div id="etapa">
+                                <label class="form-label">Actividad</label>
+                                <input type="text" class="form-control" name="etapa" id="etapa" value="{{nombre_actividades}}"
+                                    readonly>
+                            </div>
+                        </div>
+                        <div class="mb-3" id="fecha">
+                        <label class="form-label">Fecha Evento</label>
+                        <input type="text" class="form-control" name="fecha_evento" id="fecha_creacion" value="{{fecha_evento}}"
+                        readonly>
+                    </div>
+                        <div class="mb-3">
+                            <div>
+                                <label class="form-label" id="">Resultado</label>
+                                <textarea type="text" class="form-control" name="resultado_actividad" id="observaciones"
+                                    maxlength="700" readonly>{{resultado_actividad}}</textarea>
+                            </div><br>
+                            <div>
+                                <a class="btn btn-warning" href="/Planificacion_actividades/editar/{{id_planificacion_actividades}}">Editar</a>
+                                <a class="btn btn-danger" 
+                                    href="/Planificacion_actividades/eliminar/{{id_planificacion_actividades}}">Eliminar</a>
+                            </div>
+
+                            <hr>
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

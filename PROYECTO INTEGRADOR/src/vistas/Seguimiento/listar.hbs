@@ -1,0 +1,39 @@
+<div class="global-container">
+    <div class="card w-75">
+        <div class="card-body" >
+
+            <form method="GET" action="/Seguimiento/listar/{{user.id_usuario}}"></form>
+            <div id="contenedor" >
+                <div class="row">
+                    {{#each listaSeguimiento}}
+                    <div class="mb-3">
+                        <label class="form-label" id="">Nombre Seguimiento</label>
+                        <input type="text" class="form-control" name="nombre_seguimiento" id="nombre"
+                            value="{{nombre_seguimiento}}" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" id="">Descripción</label>
+                        <textarea type="text" class="form-control" name="descripcion" id="descripcion"
+                            readonly>{{descripcion}}</textarea>
+                    </div>
+                    <div class="btn-group mb-3" role="toolbar">
+                        <div>                            
+                            <a class="btn btn-warning" href="/Seguimiento/editar/{{id_seguimiento}}">Editar</a>
+                            <a class="btn btn-secondary" href="/Etapa_persona/agregar/{{id_seguimiento}}">Asignar</a>
+                        </div>
+                    </div>
+                    <hr>
+                    {{/each}}
+                </div>
+            </div>
+            <div id="contenedor">
+                <div class="row">
+                    <div class="mb-3">
+                        <a class="btn btn-primary" href="/Seguimiento/agregar/{{user.id_usuario}}">Añadir</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

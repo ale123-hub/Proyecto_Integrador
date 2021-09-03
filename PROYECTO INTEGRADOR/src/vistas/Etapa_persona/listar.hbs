@@ -1,0 +1,67 @@
+<div class="global-container">
+    <div class="card w-75">
+        <div class="card-body">
+
+            <form method="GET" action="/Etapa_persona/listar/{{user.id_usuario}}">
+                <div id="contenedor">
+                    <div class="row">
+                        {{#each listaEtapa_persona}}
+                        <div class="mb-3">
+                            <div id="persona">
+                                <label class="form-label">Seguimiento</label>
+                                <input type="text" class="form-control" name="seguimiento" id="persona"
+                                    value="{{nombre_seguimiento}}" readonly>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div id="persona">
+                                <label class="form-label">Persona</label>
+                                <input type="text" class="form-control" name="persona" id="persona"
+                                    value="{{nombre_persona}}" readonly>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div id="etapa">
+                                <label class="form-label">Etapa</label>
+                                <input type="text" class="form-control" name="etapa" id="etapa" value="{{nombre_etapa}}"
+                                    readonly>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div id="responsable">
+                                <label class="form-label">Responsable</label>
+                                <input type="text" class="form-control" name="responsable" id="responsable"
+                                    value="{{nombre_responsable}}" readonly>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="mb-3">
+                                <label class="form-label" id="">Observacion</label>
+                                <textarea type="text" class="form-control" name="observaciones" id="observaciones"
+                                    maxlength="700" readonly>{{observaciones}}</textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" id="">Estado</label>
+                                <input type="text" class="form-control" name="estado" id="estado" value="{{estado}}"
+                                    readonly>
+                            </div>
+                            <div class="btn-group mb-3" role="toolbar">
+                                <div>
+                                    <a class="btn btn-danger"
+                                        href="/Etapa_persona/eliminar/{{id_etapa_persona}}">Eliminar</a>
+                                    <a class="btn btn-warning"
+                                        href="/Etapa_persona/editar/{{id_etapa_persona}}">Editar</a>
+                                    <a class="btn btn-secondary" id="boton"
+                                        href="/Planificacion_actividades/agregar/{{responsableIdResponsable}}">Planificar</a>
+                                </div>
+                            </div>
+                            <hr>
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

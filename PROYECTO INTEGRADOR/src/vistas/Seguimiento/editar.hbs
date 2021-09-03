@@ -1,0 +1,25 @@
+
+<div class="global-container">
+    <div class="card w-75">
+        <div class="card-body">
+
+            <form method="POST" action="/Seguimiento/editar/{{user.id_usuario}}">
+                {{#each editarSeguimiento}}
+                <div class="mb-3">
+                    <label class="form-label" id="">Nombre Seguimiento</label>
+                    <input type="text" class="form-control" name="nombre_seguimiento" id="nombre_seguimiento" value="{{nombre_seguimiento}}"
+                        required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" id="">Descripción</label>
+                    <textarea type="text" class="form-control" name="descripcion" id="descripcion" value="" maxlength="700"
+                        required>{{descripcion}}</textarea>
+                </div>
+                <button type="submit" class="btn btn-success" id="boton">Guardar Cambios</button>
+                <hr>
+                {{/each}}
+            </form>
+
+        </div>
+    </div>
+</div>

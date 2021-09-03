@@ -1,0 +1,46 @@
+<div class="global-container">
+    <div class="card w-75">
+        <div class="card-body">
+
+            <form method="GET" action="/Etapas/listar/{{user.id_usuario}}"></form>
+            <div id="contenedor">
+                <div class="row">
+                    {{#each listaEtapa}}
+                    <div class="mb-3">
+                        <label class="form-label" id="">Seguimiento al que pertenece</label>
+                        <input type="text" class="form-control" name="nombre_seguimiento" id="seguimiento" value="{{nombre_seguimiento}}"
+                            readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" id="">Nombre Etapa</label>
+                        <input type="text" class="form-control" name="nombre_etapa" id="nombre" value="{{nombre_etapa}}"
+                            readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" id="">Descripción</label>
+                        <textarea type="text" class="form-control" name="descripcion" id="descripcion" maxlength="700"
+                            readonly>{{descripcion}}</textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" id="">Observacion</label>
+                        <textarea type="text" class="form-control" name="observaciones" id="observaciones"
+                            maxlength="700" readonly>{{observaciones}}</textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" id="">Estado</label>
+                        <input type="text" class="form-control" name="estado" id="estado" value="{{estado}}" readonly>
+                    </div>
+                    <div class="btn-group mb-3" role="toolbar">
+                        <div>
+                            <a class="btn btn-warning" href="/Etapas/editar/{{id_etapas}}">Editar</a>
+                            <a class="btn btn-danger" href="/Etapas/eliminar/{{id_etapas}}">Eliminar</a>
+                            <a class="btn btn-secondary" id="boton" href="/Etapa_persona/listar/{{id_etapas}}">Detalle</a>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</div>

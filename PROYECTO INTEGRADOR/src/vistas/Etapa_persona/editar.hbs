@@ -1,0 +1,24 @@
+<div class="global-container">
+    <div class="card w-75">
+        <div class="card-body">
+
+            <form method="POST" action="/Etapa_persona/editar/{{user.id_usuario}}">
+                {{#each editarEtapaPersonas}}
+                <div>
+                    <div class="mb-3">
+                        <label class="form-label" id="">Observacion</label>
+                        <textarea type="text" class="form-control" name="observaciones" id="observaciones"
+                            maxlength="700" required>{{observaciones}}</textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" id="">Estado</label>
+                        <input type="text" class="form-control" name="estado" id="estado" value="{{estado}}" required>
+                    </div>
+                    <button type="submit" class="btn btn-success" id="boton">Guardar Cambios</button>
+                    <hr>
+                    {{/each}}
+            </form>
+
+        </div>
+    </div>
+</div>
